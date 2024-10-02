@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            background-image: url("bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        .tracking-box {
+            width: 400px;
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #050505;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info span {
+            margin-right: 10px;
+            color: #040404;
+        }
+
+        .logout-button {
+            background: none;
+            border: none;
+            padding: 0;
+            color: rgb(4, 4, 4);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .direction-button {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            background-color: #000500;
+            color: white;
+            border: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .direction-button:hover {
+            background-color: #45a049;
+        }
+
+        .direction-icon {
+            margin-right: 10px;
+            font-size: 30px;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .tracking-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<h1>Weather Bot</h1>
+<body>
+        <p>
+            Our workshop project, created by Team 12, aims to address two important agricultural needs: pest control and weather monitoring.<BR>
+             The Solar-scarecrow is a innovative solution designed to deter pests from crops by utilizing solar-powered motion sensors and automated scare tactics. <BR>Additionally, our project includes a Weather Station that collects real-time data on temperature, humidity, and rainfall, providing farmers with crucial information for making informed decisions about their crops.<br> Through this project, we hope to enhance farming practices and contribute to sustainable agriculture.<br>Our workshop project, created by Team 12, aims to address two important agricultural needs: pest control and weather monitoring.<br> The Solar-scarecrow is a innovative solution designed to deter pests from crops by utilizing solar-powered motion sensors and automated scare tactics.<br> Additionally, our project includes a Weather Station that collects real-time data on temperature, humidity, and rainfall, providing farmers with crucial information for making informed decisions about their crops.<br> Through this project, we hope to enhance farming practices and contribute to sustainable agriculture.
+
+                How it works
+                
+                The Solar-scarecrow
+                
+                Works by detecting the motion of pests within a designated range using solar-powered motion sensors. Upon detecting motion, the scarecrow's automated scare tactics are activated, such as loud noises , effectively deterring the pests from the crops.
+                
+                The Weather Station
+                
+                Collects data on temperature, humidity, and rainfall using sensors, which is then transmitted to a central server for real-time monitoring and analysis by farmers. This help the farmer to maintain their crop according to weather.
+        </p>
+    <div class="container">
+        <div class="tracking-box">
+            <h1>Weather Bot</h1>
+          
+        <div class="user-info top-right">
+            <span id="username"></span>
+            <button class="logout-button">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var username = localStorage.getItem('username');
+            if (username) {
+                document.getElementById('username').textContent = username;
+            }
+
+            document.querySelector('.logout-button').addEventListener('click', function() {
+                localStorage.removeItem('username');
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+</body>
+</html>
